@@ -1,0 +1,10 @@
+config = {
+    "wifirst": {
+        "username": "",
+        "password": ""
+    },
+    "cesi": {
+        "username": "",
+        "password": ""
+    }
+}
