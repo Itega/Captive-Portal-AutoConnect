@@ -2,7 +2,9 @@
 import socket
 import subprocess
 import urllib2
+import time
 import config as config
+
 from cesi_proxy import Cesi
 from wifirst import Wifirst
 
@@ -37,18 +39,19 @@ def tryPing():
         pass
     return False
 
-
-if tryPing():
-    if not tryPortal():
-        wifi = getWifiName()
-        if wifi == "SmartCampus":
-            if not wifirst.reconnect():
-                fail += 1
-            else:
-                fail = 0
-        elif wifi == "CESI_HotSpot":
-            if not cesi.reconnect():
-                fail += 1
-            else:
-                fail = 0
-        print fail
+while 1:
+    if tryPing():
+        if not tryPortal():
+            wifi = getWifiName()
+            if wifi == "SmartCampus":
+                if not wifirst.reconnect():
+                    fail += 1
+                else:
+                    fail = 0
+            elif wifi == "CESI_HotSpot":
+                if not cesi.reconnect():
+                    fail += 1
+                else:
+                    fail = 0
+            print fail
+    time.sleep(60)
