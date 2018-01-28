@@ -7,7 +7,7 @@ A simple python script to (re)connect to a captive portal.
  - CESI
 
 ## Install
-To use this script you will need Python 2.7
+To use this script you will need Python 2.7 and Windows
  1. `git clone https://github.com/Itega/Captive-Portal-AutoConnect/`
  2. `pip install -r requirements.txt`
  3. Edit `config.py.example` and rename it to `config.py`
